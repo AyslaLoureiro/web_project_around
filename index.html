@@ -27,7 +27,7 @@
             <div class="profile__content-title-button">
               <h1 class="profile__title">Jacques Cousteau</h1>
               <button class="profile__edit-button" type="button">
-                <img src="images/Edit Button.png" alt="editbutton" />
+                <img src="images/Edit Button.png" alt="edit button" />
               </button>
             </div>
             <h2 class="profile__explorar">Explorar</h2>
@@ -134,10 +134,35 @@
           </div>
         </div>
       </section>
+      <div class="popup">
+        <button class="popup__button-close">
+          <img src="images/closepopupicon.png" alt="icon close" />
+        </button>
+        <div class="popup__container">
+          <h3 class="popup__title">Editar Perfil</h3>
+          <form class="form popup__form">
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="form__input"
+              value="Jacques Cousteau"
+            />
+            <input
+              type="text"
+              name="aboutme"
+              id="aboutme"
+              class="form__input"
+              value="Explorar"
+            />
+            <button class="form__button-save" type="submit">salvar</button>
+          </form>
+        </div>
+      </div>
       <footer class="footer">
         <p class="footer__paragraph">© 2021 Around The U.S.</p>
       </footer>
     </div>
-    <script></script>
+    <script src="./index.js"></script>
   </body>
 </html>
