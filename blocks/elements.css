@@ -34,19 +34,32 @@
   grid-area: text;
   flex-direction: row;
 }
-.elements__button {
-  width: 21px;
-  grid-area: button;
-  color: #000000;
+/* .elements__button { */
   background: none;
-  border: 0;
+  border: none;
 }
+.elements__heart-black {
+  display: none;
+}
+
 .elements__content {
   display: flex;
   justify-content: space-between;
   margin-left: 21px;
   margin-right: 15px;
 }
+
+@media (max-width: 1024px) {
+  .elements {
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 17px;
+    column-gap: 20px;
+    justify-content: center;
+  }
+}
+
 @media (max-width: 720px) {
   .elements {
     display: grid;

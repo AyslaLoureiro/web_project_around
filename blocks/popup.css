@@ -6,19 +6,18 @@
   background-color: #fff;
   box-shadow: 0px 0px 25px 0px #00000026;
   border-radius: 20px;
+  border: none;
 }
-
 .popup__container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  z-index: 999;
+  width: 100%;
 }
 
 .popup__open {
   display: flex;
+  max-width: 100%;
   justify-content: center;
   flex-direction: column;
+  position: fixed;
 }
 
 .popup__title {
@@ -35,12 +34,20 @@
 
 .popup__button-close {
   width: 40px;
-  background: #ffffff;
+  color: #ffffff;
+  background: none;
+  border: none;
+  margin-top: -75px;
+  margin-left: 420px;
+}
+.popup__button-close:hover {
+  opacity: 60%;
 }
 
 @media (max-width: 720px) {
   .popup {
     width: 282px;
+    position: fixed;
   }
   .popup__title {
     width: 238px;

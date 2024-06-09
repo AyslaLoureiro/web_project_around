@@ -6,32 +6,47 @@
 .form__button-save {
   width: 358px;
   height: 50.15px;
-  top: 438.34px;
-  left: 461px;
-  gap: 0px;
-  border-radius: 2px 0px 0px 0px;
-  opacity: 0px;
   background-color: black;
+  color: #fff;
   margin-left: 36px;
-  margin-bottom: 36px;
+  margin-bottom: 0px;
   margin-top: 48px;
-  border-radius: 5px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.78px;
+  text-align: center;
+  padding: 0;
+  border: 0;
+}
+
+.form__button-save:hover {
+  opacity: 50%;
 }
 
 .form__input {
-  display: flex;
-  justify-content: center;
   margin-left: 36px;
-  gap: 30px;
   width: 358px;
   height: 27.26px;
   color: #000000;
-  border: 1px solid #000000;
+  padding: 0 0 13px;
+  border: 0;
+  border-bottom: 1px solid #000000;
+}
+
+@media (max-width: 1024px) {
 }
 
 @media (max-width: 720px) {
   .form__input {
     width: 238px;
     height: 26px;
+  }
+  .form__button-save {
+    width: 238px;
+    height: 46px;
+    margin-left: 22px;
   }
 }
