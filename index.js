@@ -14,12 +14,25 @@ const profileTitle = document.querySelector(".profile__title");
 
 const profileExplorar = document.querySelector(".profile__explorar");
 
+const likeButtons = document.querySelectorAll(".elements__heart");
+
 edtButton.addEventListener("click", () => {
   popup.classList.add("popup__open");
 });
 
 closeButton.addEventListener("click", () => {
   popup.classList.remove("popup__open");
+});
+
+likeButtons.forEach((buttonLike) => {
+  buttonLike.addEventListener("click", (e) => {
+    const likeButton = e.target;
+    if (likeButton.getAttribute("src") === "images/blackheart.svg") {
+      return likeButton.setAttribute("src", "images/heart.svg");
+    }
+
+    return likeButton.setAttribute("src", "images/blackheart.svg");
+  });
 });
 
 form.addEventListener("submit", (e) => {

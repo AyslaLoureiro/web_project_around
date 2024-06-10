@@ -34,10 +34,7 @@
   grid-area: text;
   flex-direction: row;
 }
-/* .elements__button { */
-  background: none;
-  border: none;
-}
+
 .elements__heart-black {
   display: none;
 }

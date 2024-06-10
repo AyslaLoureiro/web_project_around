@@ -47,6 +47,10 @@
   background: none;
   border: 0;
 }
+.profile__edit-button:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
 .profile__add-button {
   display: flex;
   width: 150px;
@@ -58,11 +62,16 @@
   align-self: center;
   align-items: center;
 }
+.profile__add-button:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
 .profile__content-title-button {
   display: flex;
   flex-direction: row;
   gap: 18px;
 }
+
 @media (max-width: 720px) {
   .profile {
     width: 282px;
