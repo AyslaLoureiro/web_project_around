@@ -45,7 +45,7 @@ form.addEventListener("submit", (e) => {
   const name = nameInput.value;
   const aboutMe = aboutMeInput.value;
 
-  console.log("asdasd", nameInput.value, aboutMeInput.value);
+  console.log(nameInput.value, aboutMeInput.value);
 
   profileTitle.textContent = name;
   profileExplorar.textContent = aboutMe;
