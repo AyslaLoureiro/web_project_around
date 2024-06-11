@@ -39,7 +39,27 @@
           <img src="images/addbutton.png" alt="addbutton" />
         </button>
       </section>
+      <div class="popup">
+        <div class="overlay"></div>
+        <form class="popup__form-title">
+          <div class="popup__form-itens">
+            <div class="popup__button-close">
+              <img src="images/closepopupicon.png" alt="icon close" />
+            </div>
+            <h2 class="popup__title">Editar Perfil</h2>
 
+            <div class="popup__form-inputs">
+              <input class="popup__form-input popup__form-name" />
+            </div>
+
+            <div class="popup__form-inputs">
+              <input class="popup__form-input popup__form-job" />
+            </div>
+
+            <button class="button button-submit" type="submit">Salvar</button>
+          </div>
+        </form>
+      </div>
       <section class="elements">
         <div class="elements__item">
           <img src="images/vale.jpg" alt="elementimg" class="elements__image" />
@@ -128,31 +148,7 @@
           </div>
         </div>
       </section>
-      <div class="popup">
-        <button class="popup__button-close">
-          <img src="images/closepopupicon.png" alt="icon close" />
-        </button>
-        <div class="popup__container">
-          <h3 class="popup__title">Editar Perfil</h3>
-          <form class="form popup__form">
-            <input
-              type="text"
-              name="name"
-              id="name"
-              class="form__input"
-              value="Jacques Cousteau"
-            />
-            <input
-              type="text"
-              name="aboutme"
-              id="aboutme"
-              class="form__input"
-              value="Explorar"
-            />
-            <button class="form__button-save" type="submit">Salvar</button>
-          </form>
-        </div>
-      </div>
+
       <footer class="footer">
         <p class="footer__paragraph">© 2021 Around The U.S.</p>
       </footer>

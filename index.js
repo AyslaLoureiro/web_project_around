@@ -6,9 +6,9 @@ const edtButton = document.querySelector(".profile__edit-button");
 
 const form = document.querySelector(".popup__form");
 
-const nameInput = document.querySelector("#name");
+const nameInput = document.querySelector(".popup__form-name");
 
-const aboutMeInput = document.querySelector("#aboutme");
+const aboutMeInput = document.querySelector(".popup__form-job");
 
 const profileTitle = document.querySelector(".profile__title");
 
@@ -17,6 +17,8 @@ const profileExplorar = document.querySelector(".profile__explorar");
 const likeButtons = document.querySelectorAll(".elements__heart");
 
 edtButton.addEventListener("click", () => {
+  nameInput.value = profileTitle.textContent;
+  aboutMeInput.value = profileExplorar.textContent;
   popup.classList.add("popup__open");
 });
 
@@ -42,13 +44,8 @@ form.addEventListener("submit", (e) => {
   // resetar vaçores do form
   e.preventDefault();
 
-  const name = nameInput.value;
-  const aboutMe = aboutMeInput.value;
-
-  console.log(nameInput.value, aboutMeInput.value);
-
-  profileTitle.textContent = name;
-  profileExplorar.textContent = aboutMe;
+  profileTitle.textContent = nameInput.value;
+  profileExplorar.textContent = aboutMeInput.value;
 
   popup.classList.remove("popup__open");
   form.reset();

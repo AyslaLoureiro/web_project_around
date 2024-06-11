@@ -1,87 +1,182 @@
 .popup {
-  display: none;
-  width: 430px;
-  height: 330px;
-  border: 1px solid #000000;
-  background-color: #ffffff;
-  color: #ffffff;
-  box-shadow: 0px 0px 25px 0px #00000026;
-  border-radius: 20px;
-  border: none;
-  position: absolute;
-  inset: 0;
-  align-self: center;
-  justify-content: center;
-  margin-left: 425px;
-}
-.popup__container {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
   flex-direction: column;
-  width: 100%;
-  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  visibility: hidden;
+  transition: visibility 0.1s, opacity 0.5s linear;
+}
+
+.popup__form-edit {
+  width: 90%;
   max-width: 430px;
-  max-height: 330px;
+  height: auto;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.popup__form-itens {
+  position: relative;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 430px;
+  max-width: 430px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10% auto;
+}
+
+.overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -2;
 }
 
 .popup__open {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  width: 430px;
-  height: 330px;
-  max-width: 430px;
-  max-height: 330px;
+  opacity: 1;
+  z-index: 999;
+  visibility: visible;
 }
 
 .popup__title {
-  width: 330px;
-  font-family: Inter;
+  display: flex;
+  width: 100%;
+  max-width: 330px;
   font-size: 24px;
   font-weight: 900;
-  line-height: 29.05px;
+  line-height: 29px;
   text-align: left;
-  color: #000000;
-  margin-top: 34px;
-  margin-left: 36px;
+  color: #000;
+}
+
+.popup__form-name,
+.popup__form-job {
+  width: 358px;
+  height: 27px;
+  border: none;
+  border-bottom: 1px solid #000;
+  margin: 20px 36px;
 }
 
 .popup__button-close {
-  width: 40px;
-  color: #ffffff;
-  background: none;
-  border: none;
-  margin-top: -75px;
-  margin-left: 420px;
+  width: 39px;
+  height: 39px;
+  align-self: flex-end;
+  cursor: pointer;
+  position: absolute;
+  top: -40px;
+  right: -45px;
 }
+
 .popup__button-close:hover {
   cursor: pointer;
   opacity: 0.7;
 }
-.popup__form {
-  gap: 30px;
+
+.button-submit {
+  width: 358px;
+  height: 50px;
+  border-radius: 2px;
+  background-color: #000;
+  color: #fff;
+  margin: 40px 36px 36px;
+}
+
+.button-submit:hover {
+  background-color: #333638;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .popup__form-close {
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  .popup__form-title {
+    width: 90%;
+    max-width: 238px;
+    font-size: 18px;
+    line-height: 22px;
+    margin: 25px auto 0;
+  }
+
+  .popup__form-itens {
+    width: 90%;
+    max-width: 350px;
+    margin: 20% auto;
+  }
+
+  .popup__form-name,
+  .popup__form-job {
+    width: 90%;
+    max-width: 238px;
+    height: 26px;
+    margin: 20px auto;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    text-align: left;
+  }
+
+  .button-submit {
+    width: 90%;
+    max-width: 238px;
+    height: 46px;
+    margin: 20px auto;
+  }
 }
 
 @media (max-width: 720px) {
-  .popup {
-    width: 282px;
-    margin-left: 19px;
+  .popup__form-itens {
+    width: 80%;
   }
-  .popup__open {
-    width: 282px;
-    height: 322px;
-    margin-top: 123px;
+
+  .popup__form-title {
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 21.78px;
+    text-align: left;
   }
-  .popup__title {
-    width: 238px;
-    height: 22px;
-    margin-top: 25px;
+
+  .popup__form-name {
+    width: 100%;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    text-align: left;
+    margin: 0;
   }
-  .popup__button-close {
-    width: 26px;
-    height: 26px;
-    margin-top: -115px;
-    margin-left: 240px;
+  .popup__form-job {
+    width: 100%;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    text-align: left;
+    margin-top: 30px;
+  }
+
+  .button-submit {
+    width: 100%;
   }
 }
