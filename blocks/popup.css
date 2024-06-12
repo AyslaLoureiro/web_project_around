@@ -12,6 +12,7 @@
   z-index: 999;
   visibility: hidden;
   transition: visibility 0.1s, opacity 0.5s linear;
+  font-family: "Inter";
 }
 
 .popup__form-edit {
@@ -29,7 +30,6 @@
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   padding: 30px;
   width: 430px;
-  max-width: 430px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -110,7 +110,7 @@
   }
 
   .popup__form-title {
-    width: 90%;
+    width: 100%;
     max-width: 238px;
     font-size: 18px;
     line-height: 22px;
@@ -118,15 +118,14 @@
   }
 
   .popup__form-itens {
-    width: 90%;
-    max-width: 350px;
+    max-width: 430px;
     margin: 20% auto;
   }
 
   .popup__form-name,
   .popup__form-job {
-    width: 90%;
-    max-width: 238px;
+    width: 100%;
+    max-width: 358px;
     height: 26px;
     margin: 20px auto;
     font-family: Inter;
@@ -137,10 +136,13 @@
   }
 
   .button-submit {
-    width: 90%;
-    max-width: 238px;
+    width: 100%;
+    max-width: 358px;
     height: 46px;
     margin: 20px auto;
+  }
+  .popup__form-inputs {
+    width: 358px;
   }
 }
 
@@ -150,6 +152,7 @@
   }
 
   .popup__form-title {
+    width: 90%;
     font-family: Inter;
     font-size: 18px;
     font-weight: 900;
@@ -178,5 +181,9 @@
 
   .button-submit {
     width: 100%;
+  }
+
+  .popup__form-inputs {
+    width: 90%;
   }
 }
