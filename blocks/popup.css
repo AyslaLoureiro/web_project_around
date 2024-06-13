@@ -114,12 +114,12 @@
     max-width: 238px;
     font-size: 18px;
     line-height: 22px;
-    margin: 25px auto 0;
+    margin: 0;
+    margin-top: 25px;
   }
 
   .popup__form-itens {
-    max-width: 430px;
-    margin: 20% auto;
+    width: 100%;
   }
 
   .popup__form-name,
@@ -140,9 +140,6 @@
     max-width: 358px;
     height: 46px;
     margin: 20px auto;
-  }
-  .popup__form-inputs {
-    width: 358px;
   }
 }
 

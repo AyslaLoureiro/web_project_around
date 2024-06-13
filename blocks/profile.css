@@ -5,6 +5,7 @@
   margin-bottom: 50px;
   gap: 30px;
   padding: 0;
+  align-items: center;
 }
 .profile__container {
   display: flex;
@@ -17,6 +18,10 @@
   color: #ffffff;
   margin: 0;
   padding: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 358px;
 }
 .profile__info {
   display: flex;
@@ -37,6 +42,10 @@
   line-height: 21.78px;
   color: #ffffff;
   align-items: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 358px;
 }
 .profile__image {
   width: 120px;
