@@ -8,3 +8,5 @@ O projeto Around foi construido com o conhecimento adquirido em HTML, CSS, e a e
 
 **FIGMA**
 
+## Acesso ao link do site 
+https://ayslaloureiro.github.io/web_project_around/
