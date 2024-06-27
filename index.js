@@ -24,13 +24,13 @@ const likeButtons = document.querySelectorAll(".elements__heart");
 
 const trashButtons = document.querySelectorAll(".elements__trash-button");
 
-const popupAdd = document.querySelector(".popup__add");
+const popupAdd = document.querySelector(".popup_add");
 
 const addButton = document.querySelector(".profile__add-button");
 
 const cardsContainer = document.querySelector(".elements");
 
-const popupImage = document.querySelector(".popup__image");
+const popupImage = document.querySelector(".popup_image");
 
 const imagePopup = document.querySelector(".popup__image-zoom");
 
