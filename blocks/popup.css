@@ -100,8 +100,8 @@
   cursor: pointer;
 }
 .popup__image-zoom {
-  width: 433px;
-  height: 540px;
+  max-width: 75vw;
+  max-height: 75vh;
 }
 .popup__image-text {
   width: 291px;

@@ -72,11 +72,11 @@
             <h2 class="popup__title">Editar Perfil</h2>
 
             <div class="popup__form-inputs">
-              <input class="popup__form-input popup__form-name" />
+              <input class="popup__form-input popup__form-name" required />
             </div>
 
             <div class="popup__form-inputs">
-              <input class="popup__form-input popup__form-job" />
+              <input class="popup__form-input popup__form-job" required />
             </div>
 
             <button class="button button-submit" type="submit">Salvar</button>
@@ -97,6 +97,7 @@
               <input
                 class="popup__form-input popup__form-name popup__add-form-name"
                 placeholder="Título"
+                required
               />
             </div>
 
@@ -104,6 +105,8 @@
               <input
                 class="popup__form-input popup__form-job popup__add-form-image"
                 placeholder="Link de imagem"
+                type="url"
+                required
               />
             </div>
 
