@@ -99,6 +99,26 @@
   background-color: #333638;
   cursor: pointer;
 }
+.popup__image-zoom {
+  width: 433px;
+  height: 540px;
+}
+.popup__image-text {
+  width: 291px;
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14.52px;
+  text-align: left;
+  color: #fff;
+}
+.popup__image-itens {
+  position: relative;
+}
+.popup__image-button-close {
+  background: none;
+  border: none;
+}
 
 @media (max-width: 1024px) {
   .popup__form-close {
@@ -182,5 +202,17 @@
 
   .popup__form-inputs {
     width: 90%;
+  }
+  .popup__image-zoom {
+    width: 240px;
+    height: 299px;
+  }
+  .popup__image-text {
+    width: 240px;
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.52px;
+    text-align: left;
   }
 }

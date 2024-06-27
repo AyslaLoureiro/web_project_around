@@ -39,6 +39,29 @@
           <img src="images/addbutton.png" alt="addbutton" />
         </button>
       </section>
+      <section class="elements">
+        <template id="cards">
+          <div class="elements__item">
+            <button type="button" class="elements__trash-button">
+              <img src="images/trash.svg" alt="trash button" />
+            </button>
+            <img src=" " alt="elementimg" class="elements__image" />
+
+            <div class="elements__content">
+              <h2 class="elements__title"></h2>
+              <img
+                src="images/heart.svg"
+                class="elements__heart"
+                alt="heart icon"
+              />
+            </div>
+          </div>
+        </template>
+      </section>
+
+      <footer class="footer">
+        <p class="footer__paragraph">© 2021 Around The U.S.</p>
+      </footer>
       <div class="popup">
         <div class="overlay"></div>
         <form class="popup__form-title">
@@ -60,98 +83,48 @@
           </div>
         </form>
       </div>
-      <section class="elements">
-        <div class="elements__item">
-          <img src="images/vale.jpg" alt="elementimg" class="elements__image" />
-          <div class="elements__content">
-            <h2 class="elements__title">Vale Yosemite</h2>
 
-            <img
-              src="images/heart.svg"
-              class="elements__heart"
-              alt="heart icon"
-            />
-          </div>
-        </div>
+      <div class="popup popup__add">
+        <div class="overlay"></div>
+        <form class="popup__form-title popup__add-card-form">
+          <div class="popup__form-itens">
+            <div class="popup__button-close popup__add-card-button-close">
+              <img src="images/closepopupicon.png" alt="icon close" />
+            </div>
+            <h2 class="popup__title">Novo Local</h2>
 
-        <div class="elements__item">
-          <img src="images/lago.png" alt="elementimg" class="elements__image" />
-          <div class="elements__content">
-            <h2 class="elements__title">Lago Louise</h2>
-            <img
-              src="images/heart.svg"
-              class="elements__heart"
-              alt="heart icon"
-            />
-          </div>
-        </div>
-        <div class="elements__item">
-          <img
-            src="images/montanhas.png"
-            alt="elementimg"
-            class="elements__image"
-          />
-          <div class="elements__content">
-            <h2 class="elements__title">Montanhas Carrauntoohil</h2>
-            <img
-              src="images/heart.svg"
-              class="elements__heart"
-              alt="heart icon"
-            />
-          </div>
-        </div>
-        <div class="elements__item">
-          <img
-            src="images/latemar.png"
-            alt="elementimg"
-            class="elements__image"
-          />
-          <div class="elements__content">
-            <h2 class="elements__title">Latemar</h2>
-            <img
-              src="images/heart.svg"
-              class="elements__heart"
-              alt="heart icon"
-            />
-          </div>
-        </div>
+            <div class="popup__form-inputs">
+              <input
+                class="popup__form-input popup__form-name popup__add-form-name"
+                placeholder="Título"
+              />
+            </div>
 
-        <div class="elements__item">
-          <img
-            src="images/vanoise.png"
-            alt="elementimg"
-            class="elements__image"
-          />
-          <div class="elements__content">
-            <h2 class="elements__title">Vanoise National Park</h2>
-            <img
-              src="images/heart.svg"
-              class="elements__heart"
-              alt="heart icon"
-            />
-          </div>
-        </div>
+            <div class="popup__form-inputs">
+              <input
+                class="popup__form-input popup__form-job popup__add-form-image"
+                placeholder="Link de imagem"
+              />
+            </div>
 
-        <div class="elements__item">
-          <img
-            src="images/lagodibraies.png"
-            alt="elementimg"
-            class="elements__image"
-          />
-          <div class="elements__content">
-            <h2 class="elements__title">Lago di Braies</h2>
-            <img
-              src="images/heart.svg"
-              class="elements__heart"
-              alt="heart icon"
-            />
+            <button class="button button-submit" type="submit">Salvar</button>
           </div>
-        </div>
-      </section>
+        </form>
+      </div>
 
-      <footer class="footer">
-        <p class="footer__paragraph">© 2021 Around The U.S.</p>
-      </footer>
+      <div class="popup popup__image">
+        <div class="overlay"></div>
+        <div class="popup__image-itens">
+          <button
+            type="button"
+            class="popup__button-close popup__image-button-close"
+          >
+            <img src="images/closepopupicon.png" alt="icon close" />
+          </button>
+          <img src="" alt="" class="popup__image-zoom" />
+          <p class="popup__image-text"></p>
+        </div>
+      </div>
     </div>
     <script src="./index.js"></script>
   </body>
