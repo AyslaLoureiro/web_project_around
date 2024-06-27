@@ -7,6 +7,6 @@ O projeto Around foi construido com o conhecimento adquirido em HTML, CSS, e a e
 **VISUAL STUDIO CODE**
 
 **FIGMA**
-## Acesso ao projeto
+## Acesso ao link
 
-https://github.com/AyslaLoureiro/web_project_around.git
+https://ayslaloureiro.github.io/web_project_around/
