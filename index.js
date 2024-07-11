@@ -29,7 +29,7 @@ const likeButtons = document.querySelectorAll(".elements__heart");
 
 const trashButtons = document.querySelectorAll(".elements__trash-button");
 
-const popupAdd = document.querySelector(".popup_add");
+const popupAdd = document.querySelector(".popup-add");
 popupAdd.addEventListener("click", (event) => {
   if (event.target.classList.contains("overlay")) {
     popupAdd.classList.remove("popup__open");
@@ -40,7 +40,7 @@ const addButton = document.querySelector(".profile__add-button");
 
 const cardsContainer = document.querySelector(".elements");
 
-const popupImage = document.querySelector(".popup_image");
+const popupImage = document.querySelector(".popup-image");
 popupImage.addEventListener("click", (event) => {
   if (event.target.classList.contains("overlay")) {
     popupImage.classList.remove("popup__open");
