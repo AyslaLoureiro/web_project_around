@@ -55,6 +55,7 @@
   width: 24px;
   background: none;
   border: 0;
+  outline: none;
 }
 .profile__edit-button:hover {
   cursor: pointer;

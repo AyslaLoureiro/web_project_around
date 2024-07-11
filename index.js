@@ -1,4 +1,9 @@
 const popup = document.querySelector(".popup");
+popup.addEventListener("click", (event) => {
+  if (event.target.classList.contains("overlay")) {
+    popup.classList.remove("popup__open");
+  }
+});
 
 const closeButton = document.querySelector(".popup__button-close");
 
@@ -25,12 +30,22 @@ const likeButtons = document.querySelectorAll(".elements__heart");
 const trashButtons = document.querySelectorAll(".elements__trash-button");
 
 const popupAdd = document.querySelector(".popup_add");
+popupAdd.addEventListener("click", (event) => {
+  if (event.target.classList.contains("overlay")) {
+    popupAdd.classList.remove("popup__open");
+  }
+});
 
 const addButton = document.querySelector(".profile__add-button");
 
 const cardsContainer = document.querySelector(".elements");
 
 const popupImage = document.querySelector(".popup_image");
+popupImage.addEventListener("click", (event) => {
+  if (event.target.classList.contains("overlay")) {
+    popupImage.classList.remove("popup__open");
+  }
+});
 
 const imagePopup = document.querySelector(".popup__image-zoom");
 
@@ -176,3 +191,11 @@ formAdd.addEventListener("submit", (e) => {
   popupAdd.classList.remove("popup__open");
   formAdd.reset();
 });
+
+document.onkeydown = function (event) {
+  if (event.key === "Escape") {
+    popup.classList.remove("popup__open");
+    popupAdd.classList.remove("popup__open");
+    popupImage.classList.remove("popup__open");
+  }
+};

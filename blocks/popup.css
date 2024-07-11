@@ -28,13 +28,9 @@
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 30px;
+  padding: 34px 36px;
   width: 430px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 10% auto;
+  box-sizing: border-box;
 }
 
 .overlay {
@@ -68,7 +64,8 @@
   height: 27px;
   border: none;
   border-bottom: 1px solid #000;
-  margin: 20px 36px;
+  /* margin-left: 36px; */
+  margin-top: 20px;
 }
 
 .popup__button-close {
@@ -92,13 +89,23 @@
   border-radius: 2px;
   background-color: #000;
   color: #fff;
-  margin: 40px 36px 36px;
+  margin-top: 40px;
 }
 
 .button-submit:hover {
   background-color: #333638;
   cursor: pointer;
 }
+.button__disabled {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.2);
+}
+.button__disabled:hover {
+  background-color: unset;
+  cursor: unset;
+}
+
 .popup__image-zoom {
   max-width: 75vw;
   max-height: 75vh;
@@ -118,6 +125,13 @@
 .popup__image-button-close {
   background: none;
   border: none;
+}
+.popup__form-input-invalid {
+  border-bottom: 1px solid #ff0000;
+}
+
+.popup__span-error {
+  color: #ff0000;
 }
 
 @media (max-width: 1024px) {

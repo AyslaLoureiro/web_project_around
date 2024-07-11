@@ -62,9 +62,9 @@
       <footer class="footer">
         <p class="footer__paragraph">© 2021 Around The U.S.</p>
       </footer>
-      <div class="popup">
+      <div class="popup popup__edit-profile">
         <div class="overlay"></div>
-        <form class="popup__form-title">
+        <form class="popup__form-title" novalidate>
           <div class="popup__form-itens">
             <div class="popup__button-close">
               <img src="images/closepopupicon.png" alt="icon close" />
@@ -72,11 +72,25 @@
             <h2 class="popup__title">Editar Perfil</h2>
 
             <div class="popup__form-inputs">
-              <input class="popup__form-input popup__form-name" required />
+              <input
+                class="popup__form-input popup__form-name"
+                id="input-name"
+                minlength="2"
+                maxlength="40"
+                required
+              />
+              <span class="popup__form-error" id="input-name-error"></span>
             </div>
 
             <div class="popup__form-inputs">
-              <input class="popup__form-input popup__form-job" required />
+              <input
+                class="popup__form-input popup__form-job"
+                id="input-about"
+                minlength="2"
+                maxlength="400"
+                required
+              />
+              <span class="popup__form-error" id="input-about-error"></span>
             </div>
 
             <button class="button button-submit" type="submit">Salvar</button>
@@ -86,7 +100,7 @@
 
       <div class="popup popup_add">
         <div class="overlay"></div>
-        <form class="popup__form-title popup__add-card-form">
+        <form class="popup__form-title popup__add-card-form" novalidate>
           <div class="popup__form-itens">
             <div class="popup__button-close popup__add-card-button-close">
               <img src="images/closepopupicon.png" alt="icon close" />
@@ -97,8 +111,12 @@
               <input
                 class="popup__form-input popup__form-name popup__add-form-name"
                 placeholder="Título"
+                minlength="2"
+                maxlength="30"
+                id="input-title"
                 required
               />
+              <span class="popup__form-error" id="input-title-error"></span>
             </div>
 
             <div class="popup__form-inputs">
@@ -106,8 +124,10 @@
                 class="popup__form-input popup__form-job popup__add-form-image"
                 placeholder="Link de imagem"
                 type="url"
+                id="input-image"
                 required
               />
+              <span class="popup__form-error" id="input-image-error"></span>
             </div>
 
             <button class="button button-submit" type="submit">Salvar</button>
@@ -130,5 +150,6 @@
       </div>
     </div>
     <script src="./index.js"></script>
+    <script src="./validate.js"></script>
   </body>
 </html>
