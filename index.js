@@ -1,3 +1,6 @@
+import Card from "./components/Card.js";
+import FormValidator from "./components/FormValidator.js";
+
 const popup = document.querySelector(".popup");
 popup.addEventListener("click", (event) => {
   if (event.target.classList.contains("overlay")) {
@@ -81,51 +84,9 @@ const initialCards = [
 ];
 
 initialCards.forEach((card) => {
-  const cardElement = addCard({ image: card.link, title: card.name });
+  const cardElement = new Card(card.name, card.link, "#cards").generateCard();
   cardsContainer.append(cardElement);
 });
-
-function addCard({ image, title }) {
-  const cardsTemplate = document.querySelector("#cards").content;
-  const cardElement = cardsTemplate
-    .querySelector(".elements__item")
-    .cloneNode(true);
-
-  cardElement.querySelector(".elements__image").src = image;
-  cardElement.querySelector(".elements__image").alt = `imagem do ${title}`;
-  cardElement.querySelector(".elements__title").textContent = title;
-
-  cardElement
-    .querySelector(".elements__heart")
-    .addEventListener("click", (e) => {
-      const likeButton = e.target;
-      if (likeButton.getAttribute("src") === "images/blackheart.svg") {
-        return likeButton.setAttribute("src", "images/heart.svg");
-      }
-
-      return likeButton.setAttribute("src", "images/blackheart.svg");
-    });
-
-  // faça isso aparecer na página
-  // cardsContainer.append(cardElement);
-  cardElement
-    .querySelector(".elements__trash-button")
-    .addEventListener("click", (e) => {
-      const card = e.target.closest(".elements__item");
-
-      card.remove();
-    });
-
-  cardElement
-    .querySelector(".elements__image")
-    .addEventListener("click", (e) => {
-      imagePopup.src = image;
-      imageTitle.textContent = title;
-      popupImage.classList.add("popup__open");
-    });
-
-  return cardElement;
-}
 
 edtButton.addEventListener("click", () => {
   nameInput.value = profileTitle.textContent;
@@ -161,10 +122,6 @@ addButton.addEventListener("click", () => {
 });
 
 form.addEventListener("submit", (e) => {
-  // primeiro precisamos pegar os valores digitados nos inputs de name e about me
-  // agora eu preciso adicionar esses valores no profile title e no profile explorar
-  // por fim eu preciso fechar o popup
-  // resetar vaçores do form
   e.preventDefault();
 
   profileTitle.textContent = nameInput.value;
@@ -181,12 +138,8 @@ formAdd.addEventListener("submit", (e) => {
 
   const title = inputTitle.value;
   const image = inputImage.value;
-  // quando o form for enviado eu preciso pegar o valor que os usuarios colocou nos inputs
-  // chamr a função add card passando os valores que o usuario colocou no input
-  // receber oretorno da função addcard em uma variavel
-  // adicionar essa variavel a cessao de cards com o metodo prepend
 
-  const cardElement = addCard({ image, title });
+  const cardElement = new Card(title, image, "#cards").generateCard();
   cardsContainer.prepend(cardElement);
   popupAdd.classList.remove("popup__open");
   formAdd.reset();
@@ -199,3 +152,19 @@ document.onkeydown = function (event) {
     popupImage.classList.remove("popup__open");
   }
 };
+
+const formElement = document.querySelector(".popup__form-title");
+const formElementAdd = document.querySelector(".popup__add-card-form");
+const config = {
+  form: ".popup__form-title",
+  input: ".popup__form-input",
+  submitButton: ".button",
+  buttonDisabledClass: "button__disabled",
+  errorClass: "popup__span-error",
+  inputErrorClass: "popup__form-input-invalid",
+};
+
+const formValidatorProfile = new FormValidator(config, formElement);
+const formValidatorAdd = new FormValidator(config, formElementAdd);
+formValidatorProfile.enableValidation();
+formValidatorAdd.enableValidation();
