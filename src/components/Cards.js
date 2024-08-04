@@ -1,4 +1,4 @@
-const popupImage = document.querySelector(".popup-image");
+import PopupWithImage from "./PopupWithImage";
 
 export default class Card {
   constructor(title, link, cardTemplate) {
@@ -54,14 +54,15 @@ export default class Card {
   }
 
   _imageButton() {
-    const imageZoom = document.querySelector(".popup__image-zoom");
-    const imageTitleZoom = document.querySelector(".popup__image-text");
     this.cardElement
       .querySelector(".elements__image")
-      .addEventListener("click", (e) => {
-        imageZoom.src = this._link;
-        imageTitleZoom.textContent = this._title;
+      .addEventListener("click", () => {
+        this._link;
+        this._title;
 
+        const popupWithImage = new PopupWithImage(".popup-image");
+        popupWithImage.setEventListeners();
+        popupWithImage.open(this._link, this._title);
         popupImage.classList.add("popup__open");
       });
   }
