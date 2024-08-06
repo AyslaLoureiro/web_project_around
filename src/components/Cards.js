@@ -1,10 +1,9 @@
-import PopupWithImage from "./PopupWithImage";
-
 export default class Card {
-  constructor(title, link, cardTemplate) {
+  constructor(title, link, cardTemplate, handleCardClick) {
     this._title = title;
     this._link = link;
     this._cardTemplate = cardTemplate;
+    this._handleCardClick = handleCardClick;
   }
 
   _getTemplate() {
@@ -57,13 +56,7 @@ export default class Card {
     this.cardElement
       .querySelector(".elements__image")
       .addEventListener("click", () => {
-        this._link;
-        this._title;
-
-        const popupWithImage = new PopupWithImage(".popup-image");
-        popupWithImage.setEventListeners();
-        popupWithImage.open(this._link, this._title);
-        popupImage.classList.add("popup__open");
+        this._handleCardClick(this._link, this._title);
       });
   }
 
