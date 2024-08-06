@@ -1,12 +1,12 @@
 // Importação de módulos (assumindo que esses módulos exportem classes)
-// import "./index.css";
+import "./pages/index.css";
 import Card from "./components/Cards.js";
 import FormValidator from "./components/FormValidator.js";
 import Section from "./components/Section.js";
 import PopupWhitForm from "./components/PopupWithForm.js";
-import PopupWhitImage from "./components/PopupWithImage.js";
 import PopupWithForm from "./components/PopupWithForm.js";
 import UserInfo from "./components/UserInfo.js";
+import PopupWithImage from "./components/PopupWithImage";
 
 // Seleciona o popup e adiciona um evento para fechá-lo ao clicar na área de sobreposição
 const popup = document.querySelector(".popup");
@@ -24,10 +24,6 @@ const addCardButtonClose = document.querySelector(
 
 // Seleciona o botão de editar perfil
 const edtButton = document.querySelector(".profile__edit-button");
-
-// Seleciona os elementos de texto do perfil
-const profileTitle = document.querySelector(".profile__title");
-const profileExplorar = document.querySelector(".profile__explorar");
 
 // Seleciona todos os botões de curtir e de deletar cartões
 const likeButtons = document.querySelectorAll(".elements__heart");
@@ -81,9 +77,21 @@ const initialCards = [
   },
 ];
 
+const popupWithImage = new PopupWithImage(".popup-image");
+const handleCardClick = (link, title) => {
+  popupWithImage.open(link, title);
+};
+
+popupWithImage.setEventListeners();
+
 // Cria e renderiza os cartões iniciais
 initialCards.forEach((card) => {
-  const cardElement = new Card(card.name, card.link, "#cards").generateCard();
+  const cardElement = new Card(
+    card.name,
+    card.link,
+    "#cards",
+    handleCardClick
+  ).generateCard();
   const section = new Section(
     {
       items: [cardElement],
@@ -96,9 +104,12 @@ initialCards.forEach((card) => {
   section.renderer();
 });
 
+const userInfo = new UserInfo({
+  userName: ".profile__title",
+  userJob: ".profile__explorar",
+});
 const handleSubmitProfileForm = ({ name, about }) => {
-  profileTitle.textContent = name;
-  profileExplorar.textContent = about;
+  userInfo.setUserInfo({ name, job: about });
 };
 
 // Cria e renderiza o popup de edição de perfil
@@ -140,10 +151,12 @@ likeButtons.forEach((buttonLike) => {
 });
 
 const handleAddCard = ({ title, link }) => {
-  cardtitle = title;
-  image = link;
-
-  const cardElement = new Card(title, image, "#cards").generateCard();
+  const cardElement = new Card(
+    title,
+    link,
+    "#cards",
+    handleCardClick
+  ).generateCard();
   const section = new Section(
     {
       items: [cardElement],
@@ -155,11 +168,10 @@ const handleAddCard = ({ title, link }) => {
   );
   section.renderer();
 };
+
 const popupAddCard = new PopupWithForm(handleAddCard, ".popup-add");
 
 popupAddCard.setEventListeners();
-
-const userInfo = new UserInfo(".profile__title", ".profile__explorar");
 
 // Evento para abrir o popup de adicionar cartão
 addButton.addEventListener("click", () => {
