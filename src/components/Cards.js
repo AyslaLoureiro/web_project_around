@@ -1,3 +1,6 @@
+import blackHeart from "../images/blackheart.svg";
+import heart from "../images/heart.svg";
+
 export default class Card {
   constructor(title, link, cardTemplate, handleCardClick) {
     this._title = title;
@@ -34,11 +37,11 @@ export default class Card {
       .querySelector(".elements__heart")
       .addEventListener("click", (e) => {
         const likeButton = e.target;
-        if (likeButton.getAttribute("src") === "images/blackheart.svg") {
-          return likeButton.setAttribute("src", "images/heart.svg");
+        if (likeButton.getAttribute("src") === blackHeart) {
+          return likeButton.setAttribute("src", heart);
         }
 
-        return likeButton.setAttribute("src", "images/blackheart.svg");
+        return likeButton.setAttribute("src", blackHeart);
       });
   }
 
