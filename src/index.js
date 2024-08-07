@@ -16,17 +16,8 @@ popup.addEventListener("click", (event) => {
   }
 });
 
-// Seleciona os botões de fechar dos popups
-const closeButton = document.querySelector(".popup__button-close");
-const addCardButtonClose = document.querySelector(
-  ".popup__add-card-button-close"
-);
-
 // Seleciona o botão de editar perfil
 const edtButton = document.querySelector(".profile__edit-button");
-
-// Seleciona todos os botões de curtir e de deletar cartões
-const likeButtons = document.querySelectorAll(".elements__heart");
 
 // Seleciona o popup de adicionar cartão e adiciona um evento para fechá-lo ao clicar na área de sobreposição
 const popupAdd = document.querySelector(".popup-add");
@@ -46,8 +37,6 @@ popupImage.addEventListener("click", (event) => {
     popupImage.classList.remove("popup__open");
   }
 });
-
-const imageCloseButton = document.querySelector(".popup__image-button-close");
 
 // Array inicial de cartões com nome e link de imagem
 const initialCards = [
@@ -122,32 +111,6 @@ popupEditProfile.setEventListeners();
 // Evento para abrir o popup de edição de perfil e preencher os campos com os valores atuais
 edtButton.addEventListener("click", () => {
   popupEditProfile.open();
-});
-
-// Evento para fechar o popup de edição de perfil
-closeButton.addEventListener("click", () => {
-  popup.classList.remove("popup__open");
-});
-
-// Evento para fechar o popup de imagem
-imageCloseButton.addEventListener("click", () => {
-  popupImage.classList.remove("popup__open");
-});
-
-// Evento para fechar o popup de adicionar cartão
-addCardButtonClose.addEventListener("click", () => {
-  popupAdd.classList.remove("popup__open");
-});
-
-// Adiciona eventos de curtir nos botões de curtir dos cartões
-likeButtons.forEach((buttonLike) => {
-  buttonLike.addEventListener("click", (e) => {
-    const likeButton = e.target;
-    if (likeButton.getAttribute("src") === "images/blackheart.svg") {
-      return likeButton.setAttribute("src", "images/heart.svg");
-    }
-    return likeButton.setAttribute("src", "images/blackheart.svg");
-  });
 });
 
 const handleAddCard = ({ title, link }) => {
