@@ -133,7 +133,54 @@
 .popup__span-error {
   color: #ff0000;
 }
-
+.popup__delete-itens {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 430px;
+  height: 181px;
+  border-radius: 10px;
+  position: relative;
+  background-color: #ffffff;
+}
+.popup__delete-submit {
+  margin-top: 0;
+  margin-left: 36px;
+}
+.popup__delete-text {
+  color: #000;
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 30px;
+  margin: 0;
+  width: 358px;
+  height: 23px;
+  margin-left: 36px;
+  margin-bottom: 38px;
+}
+.popup__proto-edit-itens {
+  background-color: #fff;
+  width: 430px;
+  height: 272px;
+  border-radius: 10px;
+}
+.popup__photo-edit-text {
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 29.05px;
+  text-align: left;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.popup__input-photo-edit {
+  width: 358px;
+  height: 27px;
+  margin-top: 54px;
+  border: none;
+  border-bottom: 1px solid #000;
+}
 @media (max-width: 1024px) {
   .popup__form-close {
     width: 26px;
