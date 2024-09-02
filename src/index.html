@@ -23,11 +23,14 @@
         />
       </header>
       <section class="profile">
-        <img
-          src="<%=require('./images/imgprofile.jpg')%>"
-          alt="image profile"
-          class="profile__image"
-        />
+        <div class="profile__image-container">
+          <button class="profile__edit-icon"></button>
+          <img
+            src="<%=require('./images/imgprofile.jpg')%>"
+            alt="image profile"
+            class="profile__image"
+          />
+        </div>
         <div class="profile__info">
           <div class="profile__content">
             <div class="profile__content-title-button">
@@ -60,11 +63,14 @@
 
             <div class="elements__content">
               <h2 class="elements__title"></h2>
-              <img
-                src="<%=require('./images/heart.svg')%>"
-                class="elements__heart"
-                alt="heart icon"
-              />
+              <div class="elements__container-like-button">
+                <img
+                  src="<%=require('./images/heart.svg')%>"
+                  class="elements__heart"
+                  alt="heart icon"
+                />
+                <span class="elements__count-like">0</span>
+              </div>
             </div>
           </div>
         </template>
@@ -153,11 +159,51 @@
               <span class="popup__form-error" id="input-image-error"></span>
             </div>
 
-            <button class="button button-submit" type="submit">Salvar</button>
+            <button class="button button-submit" type="submit">Criar</button>
           </div>
         </form>
       </div>
-
+      <div class="popup popup-avatar-edit">
+        <div class="overlay"></div>
+        <div class="popup__proto-edit-itens popup__form-itens">
+          <div class="popup__button-close popup__add-card-button-close">
+            <img
+              src="<%=require('./images/closepopupicon.png')%>"
+              alt="icon close"
+            />
+          </div>
+          <p class="popup__photo-edit-text">Alterar a foto do perfil</p>
+          <form class="popup__form-title popup__form-photo-edit" novalidate>
+            <div class="popup__form-edit-inputs">
+              <input
+                class="popup__form-input popup__input-photo-edit"
+                placeholder="link de imagem"
+                type="url"
+                id="input-avatar"
+                required
+                name="avatar"
+              />
+              <span class="popup__form-error" id="input-avatar-error"></span>
+            </div>
+            <button type="submit" class="button button-submit">Salvar</button>
+          </form>
+        </div>
+      </div>
+      <div class="popup popup-delete">
+        <div class="overlay"></div>
+        <div class="popup__delete-itens">
+          <div class="popup__button-close">
+            <img
+              src="<%=require('./images/closepopupicon.png')%>"
+              alt="icon close"
+            />
+          </div>
+          <p class="popup__delete-text">Tem Certeza ?</p>
+          <button type="button" class="button-submit popup__delete-submit">
+            Sim
+          </button>
+        </div>
+      </div>
       <div class="popup popup-image">
         <div class="overlay"></div>
         <div class="popup__image-itens">
